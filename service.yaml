@@ -1,0 +1,10 @@
+metadata:
+  name: finale-jenkins-service
+spec:
+  selector:
+    app: finale-jenkins-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer

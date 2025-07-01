@@ -1,0 +1,16 @@
+metadata:
+  name: finale-jenkins-app
+spec:
+  selector:
+    matchLabels:
+      app: finale-jenkins-app
+  template:
+    metadata:
+      labels:
+        app: finale-jenkins-app
+    spec:
+      containers:
+        - name: finale-jenkins-app
+          image: soloxbyte/finale-jenkins-app:latest
+          ports:
+            - containerPort: 3000
