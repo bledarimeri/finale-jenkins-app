@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKERHUB_CREDENTIALS = credentials('finalejenkins')
         DOCKER_IMAGE = "soloxbyte/finale-jenkins-app"
     }
 
