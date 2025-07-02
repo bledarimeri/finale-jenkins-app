@@ -1,6 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: finale-jenkins-app
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: finale-jenkins-app
@@ -10,7 +13,7 @@ spec:
         app: finale-jenkins-app
     spec:
       containers:
-        - name: finale-jenkins-app
-          image: soloxbyte/finale-jenkins-app:latest
-          ports:
-            - containerPort: 3000
+      - name: finale-jenkins-app
+        image: soloxbyte/finale-jenkins-app
+        ports:
+        - containerPort: 3000
