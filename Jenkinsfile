@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Ndërton docker imazhin me tagun tënde
-                sh "docker build -t $DOCKER_IMAGE ."
+                bat "docker build -t $DOCKER_IMAGE ."
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Log in në Docker Hub dhe push imazhin
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        sh "docker push $DOCKER_IMAGE"
+                        bat "docker push $DOCKER_IMAGE"
                     }
                 }
             }
