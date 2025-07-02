@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Log in në Docker Hub dhe push imazhin
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'finaledocker') {
                         bat "docker push $DOCKER_IMAGE"
                     }
                 }
